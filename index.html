@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- This tells the browser how to read the document. -->
+  	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Map</title>
+	<!-- Load Stylesheets -->
+	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300' rel='stylesheet'>
+</head>
+<body>
+	<aside>
+		<nav>
+		 	<!-- todo: navbar Reference: www.marchinton.com-->
+			<i class="fa fa-bars toggle_menu" aria-hidden="true"></i>
+
+			<div class="sidebar_menu">
+				<i class="fa fa-times"></i>
+				<!-- ////////////////// -->
+				<div class="search" id="search">
+					<input placeholder="Search your location" class="search-box" id="search-box" data-bind="textInput: searchTerm">
+				</div>
+				<div class="app" id="app">
+					<div class="list" id="list">
+							<ul class="results navigation_section" id="results" data-bind="foreach: filteredList">
+								 <li class="navigation_item" id="profile" data-bind= "text: name, click: bounce"></li>
+							</ul>
+					</div>
+				</div>
+
+			</div>
+			<!-- End of sidebar -->
+		</nav>
+	</aside>
+	<main>
+		<!-- Load Map -->
+		<div class="container">
+				<div id="map"></div>
+		</div>
+	</main>
+	<!-- TODO: Load JS files -->
+	<!-- <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
+	<script src='js/app.js'></script>
+	<script src='js/knockout-3.4.2.js'></script>
+	<script src='js/jquery-3.2.1.min.js'></script>	
+	<script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry&key=AIzaSyAdXUJ8LLP5B7_EKuOUj2CTpocK_m2Th2I&v=3&callback=initMap" onerror="mapError()"></script>
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script> -->
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> -->
+</body>
+</html>
